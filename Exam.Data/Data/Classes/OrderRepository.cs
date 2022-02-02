@@ -12,27 +12,45 @@ namespace Exam.Data.Data.Classes
     {
         public void Add(Order order)
         {
-            throw new NotImplementedException();
+            using (AppDbContext context = new AppDbContext())
+            {
+                context.Orders.Add(order);
+                context.SaveChanges();
+            }
         }
 
         public void Delete(Order order)
         {
-            throw new NotImplementedException();
+            using (AppDbContext context = new AppDbContext())
+            {
+                context.Orders.Remove(order);
+                context.SaveChanges();
+            }
         }
 
         public Order Get(int id)
         {
-            throw new NotImplementedException();
+            using (AppDbContext context = new AppDbContext())
+            {
+                return context.Orders.Find(id);
+            }
         }
 
         public IEnumerable<Order> GetAll()
         {
-            throw new NotImplementedException();
+            using (AppDbContext context = new AppDbContext())
+            {
+                return context.Orders.ToList();
+            }
         }
 
         public void Update(Order order)
         {
-            throw new NotImplementedException();
+            using (AppDbContext context = new AppDbContext())
+            {
+                context.Orders.Update(order);
+                context.SaveChanges();
+            }
         }
     }
 }

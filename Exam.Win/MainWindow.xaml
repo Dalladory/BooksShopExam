@@ -16,13 +16,14 @@
                     <GridViewColumn x:Name="PublishingYear" Header="Year" Width="50" DisplayMemberBinding="{Binding PublishingYear}"/>
                     <GridViewColumn x:Name="PublicherName" Header="Publicher Name" Width="185" DisplayMemberBinding="{Binding PublicherName}"/>
                     <GridViewColumn x:Name="Price" Header="Price" Width="50" DisplayMemberBinding="{Binding Price}"/>
-                    
+
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="BookAddBtn" Content="Add Book" Click="BookAddBtn_Click" HorizontalAlignment="Left" Margin="10,394,0,0" VerticalAlignment="Top" Height="27" Width="112"/>
 
-       
+
 
     </Grid>
-    
+
 </Window>

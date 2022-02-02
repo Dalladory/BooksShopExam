@@ -1,5 +1,6 @@
 ﻿using Exam.Data.Data.Model;
 using Exam.Service;
+using Exam.Win.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,24 +29,29 @@ namespace Exam.Win
 
             
             
-            Book book = new Book()
-            {
-                Name = "Name",
-                Author ="Author",
-                PagesCount = 805,
-                PublishingYear = 1998,
-                PublicherName ="PubName",
-                CostPrice = 15,
-                Price = 30,
-                IsExtenshion = false
-            };
+            //Book book = new Book()
+            //{
+            //    Name = "Name",
+            //    Author ="Author",
+            //    PagesCount = 805,
+            //    PublishingYear = 1998,
+            //    PublicherName ="PubName",
+            //    CostPrice = 15,
+            //    Price = 30,
+            //    IsExtenshion = false
+            //};
 
-            BooksList.Items.Add(book);
+            //BooksList.Items.Add(book);
 
             
 
 
 
+        }
+
+        private void BookAddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            BookWindow bookWindow = new BookWindow();
         }
     }
 }

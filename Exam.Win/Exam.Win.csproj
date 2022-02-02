@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Windows\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Exam.Data\Exam.Data.csproj" />
     <ProjectReference Include="..\Exam.Service\Exam.Service.csproj" />
   </ItemGroup>
