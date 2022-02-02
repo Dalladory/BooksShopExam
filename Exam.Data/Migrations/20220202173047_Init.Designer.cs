@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Exam.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220202160440_Init")]
+    [Migration("20220202173047_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,7 @@ namespace Exam.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("PublicherName")
+                    b.Property<string>("PublisherName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PublishingYear")

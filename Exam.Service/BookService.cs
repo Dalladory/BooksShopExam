@@ -42,6 +42,18 @@ namespace Exam.Service
             }
         }
 
+        public void DeleteRange(IEnumerable<Book> books)
+        {
+            if (books is not null)
+            {
+                _bookRepository.DeleteRange(books);
+            }
+            else
+            {
+                throw new NullReferenceException("Book is null");
+            }
+        }
+
         public Book Get(string name)
         {
             Book book = _bookRepository.Get(name);

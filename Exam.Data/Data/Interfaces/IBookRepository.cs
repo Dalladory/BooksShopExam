@@ -18,5 +18,7 @@ namespace Exam.Data.Data.Interfaces
         void Update(Book book);
         void Delete(Book book);
 
+        void DeleteRange(IEnumerable<Book> books);
+
     }
 }

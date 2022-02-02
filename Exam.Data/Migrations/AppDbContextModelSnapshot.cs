@@ -43,7 +43,7 @@ namespace Exam.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("PublicherName")
+                    b.Property<string>("PublisherName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PublishingYear")

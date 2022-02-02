@@ -7,20 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
     <Grid>
-        <ListView x:Name="BooksList" Margin="0,49,0,109">
+        <ListView x:Name="BooksList" Margin="0,49,0,109" MouseDoubleClick="BooksList_MouseDoubleClick">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="Name" Header="Name" Width="200" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn x:Name="Author" Header="Author" Width="185" DisplayMemberBinding="{Binding Author}"/>
                     <GridViewColumn x:Name="PagesCount" Header="Pages" Width="50" DisplayMemberBinding="{Binding PagesCount}"/>
                     <GridViewColumn x:Name="PublishingYear" Header="Year" Width="50" DisplayMemberBinding="{Binding PublishingYear}"/>
-                    <GridViewColumn x:Name="PublicherName" Header="Publicher Name" Width="185" DisplayMemberBinding="{Binding PublicherName}"/>
+                    <GridViewColumn x:Name="PublisherName" Header="Publisher Name" Width="185" DisplayMemberBinding="{Binding PublisherName}"/>
                     <GridViewColumn x:Name="Price" Header="Price" Width="50" DisplayMemberBinding="{Binding Price}"/>
 
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="BookAddBtn" Content="Add Book" Click="BookAddBtn_Click" HorizontalAlignment="Left" Margin="10,394,0,0" VerticalAlignment="Top" Height="27" Width="112"/>
+        <Button x:Name="BookAddBtn" Content="Add Book" Click="BookAddBtn_Click" HorizontalAlignment="Left" Margin="10,394,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
+        <Button x:Name="BookDeleteBtn" Content="Delete Selected Books" Click="BookDeleteBtn_Click" HorizontalAlignment="Left" Margin="10,426,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
 
 
 

@@ -28,6 +28,15 @@ namespace Exam.Data.Data.Classes
             }
         }
 
+        public void DeleteRange(IEnumerable<Book> books)
+        {
+            using (AppDbContext context = new AppDbContext())
+            {
+                context.Books.RemoveRange(books);
+                context.SaveChanges();
+            }
+        }
+
         public Book Get(string name)
         {
             using (AppDbContext context = new AppDbContext())

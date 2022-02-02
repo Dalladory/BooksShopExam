@@ -1,4 +1,5 @@
-﻿using Exam.Data.Data.Model;
+﻿using Exam.Data.Data.Classes;
+using Exam.Data.Data.Model;
 using Exam.Service;
 using Exam.Win.Windows;
 using System;
@@ -23,12 +24,15 @@ namespace Exam.Win
     /// </summary>
     public partial class MainWindow : Window
     {
+        BookService bookService = new BookService(new BookRepository());
+        List<Book> books;
         public MainWindow()
         {
             InitializeComponent();
+            books = (List<Book>)bookService.GetAll();
+            ItemsSourceReconnect();
+            
 
-            
-            
             //Book book = new Book()
             //{
             //    Name = "Name",
@@ -41,17 +45,70 @@ namespace Exam.Win
             //    IsExtenshion = false
             //};
 
-            //BooksList.Items.Add(book);
-
             
+        }
 
-
-
+        private void ItemsSourceReconnect()
+        {
+            BooksList.ItemsSource = null;
+            BooksList.ItemsSource = books;
         }
 
         private void BookAddBtn_Click(object sender, RoutedEventArgs e)
         {
-            BookWindow bookWindow = new BookWindow();
+            try
+            {
+                Book book = new Book();
+                BookWindow bookWindow = new BookWindow(book);
+
+                bookWindow.ShowDialog();
+
+                bookService.Add(book);
+                books.Add(book);
+                ItemsSourceReconnect();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void BookDeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (Book item in BooksList.SelectedItems)
+                {
+                    bookService.Delete(item);
+                    books.Remove(item);
+                }
+                ItemsSourceReconnect();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BooksList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                Book book = BooksList.SelectedItem as Book;
+                books.Remove(book);
+
+                BookWindow bookWindow = new BookWindow(book);
+                bookWindow.ShowDialog();
+
+                bookService.Update(book);
+                books.Add(book);
+                ItemsSourceReconnect();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

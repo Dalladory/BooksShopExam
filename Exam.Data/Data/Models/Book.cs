@@ -17,7 +17,7 @@ namespace Exam.Data.Data.Model
         public int PagesCount { get; set; }
 
         public int PublishingYear { get; set; }
-        public string PublicherName { get; set; }
+        public string PublisherName { get; set; }
 
         public decimal CostPrice { get; set; }
         public decimal Price { get; set; }

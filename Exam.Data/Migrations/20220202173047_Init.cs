@@ -16,7 +16,7 @@ namespace Exam.Data.Migrations
                     Author = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PagesCount = table.Column<int>(type: "int", nullable: false),
                     PublishingYear = table.Column<int>(type: "int", nullable: false),
-                    PublicherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PublisherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CostPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     IsExtenshion = table.Column<bool>(type: "bit", nullable: false)
