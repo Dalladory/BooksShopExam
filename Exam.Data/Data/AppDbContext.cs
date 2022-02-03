@@ -1,4 +1,5 @@
 ﻿using Exam.Data.Data.Model;
+using Exam.Data.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace Exam.Data.Data
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Genre> Genres { get; set; }
 
         
     }

@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Exam.Win"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="MainWindow" Height="700" Width="1000">
     <Grid>
-        <ListView x:Name="BooksList" Margin="0,68,0,90" MouseDoubleClick="BooksList_MouseDoubleClick">
+        <ListView x:Name="BooksList" Margin="0,68,0,101" MouseDoubleClick="BooksList_MouseDoubleClick">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="Name" Header="Name" Width="200" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn x:Name="Author" Header="Author" Width="185" DisplayMemberBinding="{Binding Author}"/>
+                    <GridViewColumn x:Name="Genre" Header="Genre" Width="185" DisplayMemberBinding="{Binding Genre}"/>
                     <GridViewColumn x:Name="PagesCount" Header="Pages" Width="50" DisplayMemberBinding="{Binding PagesCount}"/>
                     <GridViewColumn x:Name="PublishingYear" Header="Year" Width="50" DisplayMemberBinding="{Binding PublishingYear}"/>
                     <GridViewColumn x:Name="PublisherName" Header="Publisher Name" Width="185" DisplayMemberBinding="{Binding PublisherName}"/>
@@ -21,12 +22,12 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="BookAddBtn" Content="Add Book" Click="BookAddBtn_Click" HorizontalAlignment="Left" Margin="14,399,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
-        <Button x:Name="BookDeleteBtn" Content="Delete Selected Books" Click="BookDeleteBtn_Click" HorizontalAlignment="Left" Margin="14,431,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
+        <Button x:Name="BookAddBtn" Content="Add Book" Click="BookAddBtn_Click" HorizontalAlignment="Left" Margin="89,595,0,0" VerticalAlignment="Top" Height="27" Width="325"/>
+        <Button x:Name="BookDeleteBtn" Content="Delete Selected Books" Click="BookDeleteBtn_Click" HorizontalAlignment="Left" Margin="89,627,0,0" VerticalAlignment="Top" Height="27" Width="325"/>
         <Label Content="Search Books" HorizontalAlignment="Left" Margin="19,0,0,0" VerticalAlignment="Top" Width="94" Height="35"/>
         <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged" HorizontalAlignment="Left" Margin="19,35,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
-        <Button x:Name="SellBtn" Content="Sell" Click="SellBtn_Click" HorizontalAlignment="Left" Margin="183,399,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
-        <Button x:Name="OrdersBtn" Content="Orders" Click="OrdersBtn_Click" HorizontalAlignment="Left" Margin="183,431,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
+        <Button x:Name="SellBtn" Content="Sell" Click="SellBtn_Click" HorizontalAlignment="Left" Margin="587,588,0,0" VerticalAlignment="Top" Height="28" Width="325"/>
+        <Button x:Name="OrdersBtn" Content="Orders" Click="OrdersBtn_Click" HorizontalAlignment="Left" Margin="587,622,0,0" VerticalAlignment="Top" Height="27" Width="325"/>
 
 
 

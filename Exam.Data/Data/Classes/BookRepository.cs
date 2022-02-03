@@ -1,5 +1,6 @@
 ﻿using Exam.Data.Data.Interfaces;
 using Exam.Data.Data.Model;
+using Exam.Data.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,8 @@ namespace Exam.Data.Data.Classes
             }
         }
 
+        
+
         public void Delete(Book book)
         {
             using (AppDbContext context = new AppDbContext())
@@ -27,6 +30,8 @@ namespace Exam.Data.Data.Classes
                 context.SaveChanges();
             }
         }
+
+        
 
         public void DeleteRange(IEnumerable<Book> books)
         {
@@ -61,5 +66,33 @@ namespace Exam.Data.Data.Classes
                 context.SaveChanges();
             }
         }
+
+        public void AddGenre(Genre genre)
+        {
+            using (AppDbContext context = new AppDbContext())
+            {
+                context.Genres.Add(genre);
+                context.SaveChanges();
+            }
+        }
+
+        public IEnumerable<Genre> GetAllGenres()
+        {
+            using (AppDbContext context = new AppDbContext())
+            {
+                return context.Genres.ToList();
+            }
+        }
+
+        public void DeleteGenre(Genre genre)
+        {
+            using (AppDbContext context = new AppDbContext())
+            {
+                context.Genres.Remove(genre);
+                context.SaveChanges();
+            }
+        }
+
+        
     }
 }

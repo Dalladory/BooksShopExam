@@ -1,6 +1,7 @@
 ﻿using Exam.Data.Data;
 using Exam.Data.Data.Interfaces;
 using Exam.Data.Data.Model;
+using Exam.Data.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,6 +81,34 @@ namespace Exam.Service
             else
             {
                 throw new NullReferenceException("Book is null");
+            }
+        }
+
+        public void AddGenre(Genre genre)
+        {
+            if (genre is not null)
+            {
+                _bookRepository.AddGenre(genre);
+            }
+            else
+            {
+                throw new NullReferenceException("Genre is null");
+            }
+        }
+
+        public IEnumerable<Genre> GetAllGenres()
+        {
+            return _bookRepository.GetAllGenres();
+        }
+        public void DeleteGenre(Genre genre)
+        {
+            if (genre is not null)
+            {
+                _bookRepository.DeleteGenre(genre);
+            }
+            else
+            {
+                throw new NullReferenceException("Genre is null");
             }
         }
 

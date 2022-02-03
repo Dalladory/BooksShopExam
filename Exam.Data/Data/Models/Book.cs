@@ -14,6 +14,8 @@ namespace Exam.Data.Data.Model
 
         public string Author { get; set; }
 
+        public string Genre { get; set; }
+
         public int PagesCount { get; set; }
 
         public int PublishingYear { get; set; }

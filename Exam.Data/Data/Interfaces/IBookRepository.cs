@@ -1,4 +1,5 @@
 ﻿using Exam.Data.Data.Model;
+using Exam.Data.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace Exam.Data.Data.Interfaces
         void Delete(Book book);
 
         void DeleteRange(IEnumerable<Book> books);
+
+        void AddGenre(Genre genre);
+        IEnumerable<Genre> GetAllGenres();
+        void DeleteGenre(Genre genre);
+
 
     }
 }

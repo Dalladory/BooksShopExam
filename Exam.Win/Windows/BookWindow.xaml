@@ -25,6 +25,10 @@
         <TextBox x:Name="InstockTb" HorizontalAlignment="Left" Margin="222,273,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="26"/>
         <Label Content="Cost Price" HorizontalAlignment="Left" Margin="222,98,0,0" VerticalAlignment="Top" Width="66"/>
         <TextBox x:Name="CostPriceTb" HorizontalAlignment="Left" Margin="222,129,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="26"/>
+        <ComboBox x:Name="GenresCmb" HorizontalAlignment="Left" Margin="28,334,0,0" VerticalAlignment="Top" Width="120" Height="20"/>
+        <Label Content="Genre" HorizontalAlignment="Left" Margin="32,308,0,0" VerticalAlignment="Top" Width="66" RenderTransformOrigin="0.625,1.008"/>
+        <Button x:Name="AddGenreBtn" Content="+" Click="AddGenreBtn_Click" HorizontalAlignment="Left" Margin="160,334,0,0" VerticalAlignment="Top" Width="20" Height="20"/>
+        <Button x:Name="DeleteGenreBtn" Content="-" Click="DeleteGenreBtn_Click" HorizontalAlignment="Left" Margin="185,334,0,0" VerticalAlignment="Top" Width="20" Height="20"/>
 
     </Grid>
 </Window>

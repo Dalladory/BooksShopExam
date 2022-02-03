@@ -1,5 +1,6 @@
 ﻿using Exam.Data.Data.Classes;
 using Exam.Data.Data.Model;
+using Exam.Data.Data.Models;
 using Exam.Service;
 using Exam.Win.Windows;
 using System;
@@ -22,32 +23,27 @@ namespace Exam.Win
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+   
     public partial class MainWindow : Window
     {
+
         BookService bookService = new BookService(new BookRepository());
         OrderService orderService = new OrderService(new OrderRepository());
 
+
         List<Book> books;
+        List<Genre> genres;
+
         public MainWindow()
         {
             InitializeComponent();
+
             books = (List<Book>)bookService.GetAll();
+            genres = (List<Genre>)bookService.GetAllGenres();
+
+            
             ItemsSourceReconnect();
-            
-
-            //Book book = new Book()
-            //{
-            //    Name = "Name",
-            //    Author ="Author",
-            //    PagesCount = 805,
-            //    PublishingYear = 1998,
-            //    PublicherName ="PubName",
-            //    CostPrice = 15,
-            //    Price = 30,
-            //    IsExtenshion = false
-            //};
-
-            
         }
 
         private void ItemsSourceReconnect()
@@ -61,7 +57,7 @@ namespace Exam.Win
             try
             {
                 Book book = new Book();
-                BookWindow bookWindow = new BookWindow(book);
+                BookWindow bookWindow = new BookWindow(book, genres);
 
                 if(bookWindow.ShowDialog() == true)
                 {
@@ -100,7 +96,7 @@ namespace Exam.Win
             {
                 Book book = BooksList.SelectedItem as Book;
 
-                BookWindow bookWindow = new BookWindow(book);
+                BookWindow bookWindow = new BookWindow(book, genres);
                 if(bookWindow.ShowDialog() == true)
                 {
                     bookService.Update(book);
@@ -121,7 +117,7 @@ namespace Exam.Win
             }
             else
             {
-                BooksList.ItemsSource = books.Where(b => (b.Name + b.Author).IndexOf(SearchTb.Text) >= 0).ToList();
+                BooksList.ItemsSource = books.Where(b => (b.Name + b.Author).ToLower().IndexOf(SearchTb.Text) >= 0).ToList();
             }
         }
 
