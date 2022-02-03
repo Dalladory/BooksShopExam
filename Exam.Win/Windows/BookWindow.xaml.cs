@@ -32,8 +32,11 @@ namespace Exam.Win.Windows
             PagesTb.Text = book.PagesCount.ToString();
             PublishingYearTb.Text = book.PublishingYear.ToString();
             PublisherNameTb.Text = book.PublisherName;
+            CostPriceTb.Text = book.CostPrice.ToString();
             PriceTb.Text = book.Price.ToString();
+            InstockTb.Text = book.InStock.ToString();
             IsExtenshionCb.IsChecked = book.IsExtenshion;
+
 
 
         }
@@ -47,7 +50,9 @@ namespace Exam.Win.Windows
                 book.PagesCount = int.Parse(PagesTb.Text);
                 book.PublishingYear = int.Parse(PublishingYearTb.Text);
                 book.PublisherName = PublisherNameTb.Text;
+                book.CostPrice = decimal.Parse(CostPriceTb.Text);
                 book.Price = decimal.Parse(PriceTb.Text);
+                book.InStock = int.Parse(InstockTb.Text);
                 book.IsExtenshion = (bool)IsExtenshionCb.IsChecked;
                 this.DialogResult = true;
                 this.Close();

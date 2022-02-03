@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
     <Grid>
-        <ListView x:Name="BooksList" Margin="0,79,0,79" MouseDoubleClick="BooksList_MouseDoubleClick">
+        <ListView x:Name="BooksList" Margin="0,68,0,90" MouseDoubleClick="BooksList_MouseDoubleClick">
             <ListView.View>
                 <GridView>
                     <GridViewColumn x:Name="Name" Header="Name" Width="200" DisplayMemberBinding="{Binding Name}"/>
@@ -16,14 +16,17 @@
                     <GridViewColumn x:Name="PublishingYear" Header="Year" Width="50" DisplayMemberBinding="{Binding PublishingYear}"/>
                     <GridViewColumn x:Name="PublisherName" Header="Publisher Name" Width="185" DisplayMemberBinding="{Binding PublisherName}"/>
                     <GridViewColumn x:Name="Price" Header="Price" Width="50" DisplayMemberBinding="{Binding Price}"/>
+                    <GridViewColumn x:Name="InStock" Header="In Stock" Width="50" DisplayMemberBinding="{Binding InStock}"/>
 
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="BookAddBtn" Content="Add Book" Click="BookAddBtn_Click" HorizontalAlignment="Left" Margin="10,415,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
-        <Button x:Name="BookDeleteBtn" Content="Delete Selected Books" Click="BookDeleteBtn_Click" HorizontalAlignment="Left" Margin="10,447,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
-        <Label Content="Search Books" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="79" Height="35"/>
-        <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged" HorizontalAlignment="Left" Margin="19,45,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
+        <Button x:Name="BookAddBtn" Content="Add Book" Click="BookAddBtn_Click" HorizontalAlignment="Left" Margin="14,399,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
+        <Button x:Name="BookDeleteBtn" Content="Delete Selected Books" Click="BookDeleteBtn_Click" HorizontalAlignment="Left" Margin="14,431,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
+        <Label Content="Search Books" HorizontalAlignment="Left" Margin="19,0,0,0" VerticalAlignment="Top" Width="94" Height="35"/>
+        <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged" HorizontalAlignment="Left" Margin="19,35,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
+        <Button x:Name="SellBtn" Content="Sell" Click="SellBtn_Click" HorizontalAlignment="Left" Margin="183,399,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
+        <Button x:Name="OrdersBtn" Content="Orders" Click="OrdersBtn_Click" HorizontalAlignment="Left" Margin="183,431,0,0" VerticalAlignment="Top" Height="27" Width="138"/>
 
 
 

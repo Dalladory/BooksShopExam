@@ -25,6 +25,8 @@ namespace Exam.Win
     public partial class MainWindow : Window
     {
         BookService bookService = new BookService(new BookRepository());
+        OrderService orderService = new OrderService(new OrderRepository());
+
         List<Book> books;
         public MainWindow()
         {
@@ -121,6 +123,46 @@ namespace Exam.Win
             {
                 BooksList.ItemsSource = books.Where(b => (b.Name + b.Author).IndexOf(SearchTb.Text) >= 0).ToList();
             }
+        }
+
+        private void SellBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (Book item in BooksList.SelectedItems)
+                {
+                    if (item.InStock == 0)
+                    {
+                        MessageBox.Show($"Book {item.Name} is not available");
+                        continue;
+                    }
+
+                    orderService.Add(
+                        new Order()
+                        {
+                            Price = item.Price,
+                            BookId = item.Id,
+                            Date = DateTime.Now
+                        }
+                    );
+
+                    item.InStock--;
+                    bookService.Update(item);
+                }
+                ItemsSourceReconnect();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+
+        }
+
+        private void OrdersBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OrdersWindow ordersWindow = new OrdersWindow();
+            ordersWindow.Show();
         }
     }
 }

@@ -15,5 +15,7 @@ namespace Exam.Data.Data.Model
 
         public Book Book { get; set; }
 
+        public DateTime Date { get; set; }
+
     }
 }

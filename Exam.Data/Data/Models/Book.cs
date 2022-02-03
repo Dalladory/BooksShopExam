@@ -24,5 +24,7 @@ namespace Exam.Data.Data.Model
 
         public bool IsExtenshion { get; set; }
 
+        public int InStock { get; set; }
+
     }
 }
