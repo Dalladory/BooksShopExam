@@ -34,7 +34,7 @@ namespace Exam.Win
 
         List<Book> books;
         List<Genre> genres;
-
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -117,7 +117,7 @@ namespace Exam.Win
             }
             else
             {
-                BooksList.ItemsSource = books.Where(b => (b.Name + b.Author).ToLower().IndexOf(SearchTb.Text) >= 0).ToList();
+                BooksList.ItemsSource = books.Where(b => (b.Name + b.Author + b.Genre).ToLower().IndexOf(SearchTb.Text) >= 0).ToList();
             }
         }
 

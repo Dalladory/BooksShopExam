@@ -95,7 +95,7 @@ namespace Exam.Win.Windows
                     bookService.AddGenre(genre);
                     genres.Add(genre);
                     GenresItemsSourceReconnect();
-
+                    GenresCmb.SelectedItem = genres.FirstOrDefault(g => g.Name == genre.Name);
                 }
             }
             catch (Exception ex)
