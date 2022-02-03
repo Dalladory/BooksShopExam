@@ -61,11 +61,12 @@ namespace Exam.Win
                 Book book = new Book();
                 BookWindow bookWindow = new BookWindow(book);
 
-                bookWindow.ShowDialog();
-
-                bookService.Add(book);
-                books.Add(book);
-                ItemsSourceReconnect();
+                if(bookWindow.ShowDialog() == true)
+                {
+                    bookService.Add(book);
+                    books.Add(book);
+                    ItemsSourceReconnect();
+                }
             }
             catch (Exception ex)
             {
@@ -96,18 +97,29 @@ namespace Exam.Win
             try
             {
                 Book book = BooksList.SelectedItem as Book;
-                books.Remove(book);
 
                 BookWindow bookWindow = new BookWindow(book);
-                bookWindow.ShowDialog();
-
-                bookService.Update(book);
-                books.Add(book);
-                ItemsSourceReconnect();
+                if(bookWindow.ShowDialog() == true)
+                {
+                    bookService.Update(book);
+                    ItemsSourceReconnect();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(SearchTb.Text == "")
+            {
+                ItemsSourceReconnect();
+            }
+            else
+            {
+                BooksList.ItemsSource = books.Where(b => (b.Name + b.Author).IndexOf(SearchTb.Text) >= 0).ToList();
             }
         }
     }

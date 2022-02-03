@@ -49,8 +49,8 @@ namespace Exam.Win.Windows
                 book.PublisherName = PublisherNameTb.Text;
                 book.Price = decimal.Parse(PriceTb.Text);
                 book.IsExtenshion = (bool)IsExtenshionCb.IsChecked;
+                this.DialogResult = true;
                 this.Close();
-                
             }
             catch (Exception ex)
             {
